@@ -17,30 +17,30 @@ import frc.robot.Constants.TransmissionConstants;
 
 
 public class Transmission extends SubsystemBase {
-  private DoubleSolenoid transmission;
+  private DoubleSolenoid transmissionSol;
 
 
 //** Creates a new Drive. */
   public Transmission() {
     //pneumatic double solenoid
-    transmission = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.TransmissionConstants.SOL_LOW_GEAR, Constants.TransmissionConstants.SOL_HIGH_GEAR);
+    transmissionSol = new DoubleSolenoid(PneumaticsModuleType.CTREPCM, Constants.TransmissionConstants.SOL_LOW_GEAR, Constants.TransmissionConstants.SOL_HIGH_GEAR);
   }
 
   //methods start here
 public void setGearHigh(){
-  transmission.set(Value.kReverse);
+  transmissionSol.set(Value.kReverse);
 }
 
 public void setGearLow(){
-  transmission.set(Value.kForward);
+  transmissionSol.set(Value.kForward);
 }
 
 public boolean isInLowGear(){
-  return transmission.get() == Value.kForward;
+  return transmissionSol.get() == Value.kForward;
 }
 
 public boolean isInHighGear(){
-  return transmission.get() == Value.kReverse;
+  return transmissionSol.get() == Value.kReverse;
 }
 
 

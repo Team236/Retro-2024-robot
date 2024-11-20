@@ -13,37 +13,37 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Intake extends SubsystemBase {
-private CANSparkMax intake;
+private CANSparkMax intakeMotor;
 
 
   /** Creates a new Intake. */
   public Intake() {
-    intake= new CANSparkMax(Constants.MotorControllers.ID_INTAKE, MotorType.kBrushless);
+    intakeMotor= new CANSparkMax(Constants.MotorControllers.ID_INTAKE, MotorType.kBrushless);
 
-    intake.restoreFactoryDefaults();
+    intakeMotor.restoreFactoryDefaults();
 
-    intake.setInverted(false); 
+    intakeMotor.setInverted(false); 
 
-    intake.setSmartCurrentLimit(Constants.MotorControllers.SMART_CURRENT_LIMIT);
+    intakeMotor.setSmartCurrentLimit(Constants.MotorControllers.SMART_CURRENT_LIMIT);
   }
   
 
  //Methods start here
   public void openRampRate() {
-    intake.setOpenLoopRampRate(Constants.MotorControllers.OPEN_RAMP_RATE);
+    intakeMotor.setOpenLoopRampRate(Constants.MotorControllers.OPEN_RAMP_RATE);
   }
 
   public void intakeStop() {
-    intake.set(0);
+    intakeMotor.set(0);
   }
 
   public void setIntakeSpeed(double speed) {
-    intake.set(speed);
+    intakeMotor.set(speed);
   }
 
   public boolean isIntakeSpinning() {
     boolean spin;
-    if (Math.abs(intake.get()) >0.1) {
+    if (Math.abs(intakeMotor.get()) >0.1) {
       spin = true;
     }
     else {
