@@ -10,7 +10,7 @@ import frc.robot.subsystems.Transmission;
 
 public class LowGear extends Command {
 
-  //use "transmissionLG" not just "transmission", so you can transmission while changing gears
+  //use "transmission "LowGear" not just "transmission", so you can transmission while changing gears
 private Transmission transmission;
   /** Creates a new LowGear. */
   public LowGear(Transmission transmission) {

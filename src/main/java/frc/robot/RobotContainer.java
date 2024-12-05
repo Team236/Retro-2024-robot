@@ -13,10 +13,9 @@ import frc.robot.subsystems.Transmission;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
-import edu.wpi.first.wpilibj2.command.button.POVButton;
 
 public class RobotContainer {
-  //CONTROLLERS
+  //Instantiate CONTROLLERS
   XboxController driverController = new XboxController(Constants.Controller.USB_DRIVECONTROLLER);
 
   //create instance of each subsystem
@@ -48,30 +47,9 @@ public class RobotContainer {
     JoystickButton y = new JoystickButton(driverController, Constants.XboxController.Y);
     JoystickButton lb = new JoystickButton(driverController, Constants.XboxController.LB);
     JoystickButton rb = new JoystickButton(driverController, Constants.XboxController.RB);
-    //JoystickButton lm = new JoystickButton(driverController, Constants.XboxController.LM);
-    //JoystickButton rm = new JoystickButton(driverController, Constants.XboxController.RM);
-    //JoystickButton view = new JoystickButton(driverController, Constants.XboxController.VIEW);
-    //JoystickButton menu = new JoystickButton(driverController, Constants.XboxController.MENU);
-    //POVButton upPov = new POVButton(driverController,Constants.XboxController.POVXbox.UP_ANGLE);
-    //POVButton downPov = new POVButton(driverController,Constants.XboxController.POVXbox.DOWN_ANGLE); 
-   // POVButton leftPov = new POVButton(driverController,Constants.XboxController.POVXbox.LEFT_ANGLE);
-    //POVButton rightPov = new POVButton(driverController,Constants.XboxController.POVXbox.RIGHT_ANGLE);
-
-    
-/*USE BELOW IF AN XBOX CONTROLLER BREAKS 
-    JoystickButton x = new JoystickButton(driverController, Constants.LogitechF310.X);
-    JoystickButton a = new JoystickButton(driverController, Constants.LogitechF310.A);
-    JoystickButton b = new JoystickButton(driverController, Constants.LogitechF310.B);
-    JoystickButton y = new JoystickButton(driverController, Constants.LogitechF310.Y);
-    JoystickButton lb = new JoystickButton(driverController, Constants.LogitechF310.LB);
-    JoystickButton rb = new JoystickButton(driverController, Constants.LogitechF310.RB);
-    JoystickButton back = new JoystickButton(driverController, Constants.LogitechF310.BACK);
-    JoystickButton start = new JoystickButton(driverController, Constants.LogitechF310.START);
-    JoystickButton leftPress = new JoystickButton(driverController, Constants.LogitechF310.LEFT_PRESS);
-    JoystickButton rightPress = new JoystickButton(driverController, Constants.LogitechF310.RIGHT_PRESS);
-*/
+   
   //assign driver controller buttons to commands:
-  //INTAKE COMMANDS:
+  //INTAKE COMMANDS
     x.whileTrue(intakeWithWait);
     y.whileTrue(manualIntake); 
     a.whileTrue(manualEject);
